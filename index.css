@@ -1,0 +1,103 @@
+#display-area {
+    position: relative;
+    border: 1px solid black;
+    overflow: hidden;
+    margin: 10px;
+}
+
+#locator {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1;
+    height: 1;
+}
+
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    zoom: 40;
+}
+
+.dragging {
+    cursor: move;
+}
+
+canvas {
+    position: absolute;
+
+    image-rendering: optimizeSpeed;             /* Older versions of FF          */
+    image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+    image-rendering: -webkit-optimize-contrast; /* Safari                        */
+    image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+    image-rendering: pixelated;                 /* Awesome future-browsers       */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+}
+
+/***********************************************/
+
+#grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: sans;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+}
+
+.column {
+    margin: 10px;
+    width: 200px;
+}
+
+.items {
+    border: 1px solid black;
+    margin-bottom: 6px;
+}
+
+.item-group {
+    border: 1px solid black;
+    padding: 1px 5px;
+}
+
+.item-group.active {
+    border-bottom: none;
+}
+
+.item-group:not(.active) {
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.item-group:not(.active):hover {
+    background: #dfd;
+}
+
+.item-group:not(.active) .item-menu {
+    display: none;
+}
+
+.item {
+    margin-bottom: 1px;
+    background: #ccc;
+    padding: 1px 5px;
+}
+
+.item-menu {
+    float: right;
+}
+
+.item-menu a {
+    cursor: pointer;
+}
+
+.item-menu a:hover {
+    font-weight: bolder;
+    color: #299;
+}
